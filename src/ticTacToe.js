@@ -16,10 +16,13 @@ TicTacToe.prototype.changePlayer = function(){
 };
 
 TicTacToe.prototype.playTurn = function(positionPlayed){
+  if (this.winner === "") {
   this.positions[positionPlayed] = this.currentPlayer
   this.winnerCheck();
   this.changePlayer();
+  }
 };
+
 
 TicTacToe.prototype.winnerCheck = function(){
   var playersMoves = [];
@@ -43,4 +46,10 @@ TicTacToe.prototype.arrayContainsArray = function(superset, subset) {
   return subset.every(function (value) {
     return (superset.indexOf(value) >= 0);
   });
-}
+};
+
+TicTacToe.prototype.fullBoard = function(){
+  return this.positions.every(function(position){
+    return position !== ""
+  });
+};
