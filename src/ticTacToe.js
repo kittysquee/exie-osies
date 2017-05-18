@@ -16,7 +16,7 @@ TicTacToe.prototype.changePlayer = function(){
 };
 
 TicTacToe.prototype.playTurn = function(positionPlayed){
-  if (this.winner === "") {
+  if (this.winner === "" && this.positions[positionPlayed] === "") {
   this.positions[positionPlayed] = this.currentPlayer
   this.winnerCheck();
   this.changePlayer();

@@ -1,7 +1,7 @@
 var ticTacToe = new TicTacToe;
 
 var boardMarker = function(position) {
-  if (ticTacToe.winner === ""){
+  if (ticTacToe.winner === "" && ticTacToe.positions[position.split("-")[1]] === ""){
   document.getElementById(position).innerText = ticTacToe.currentPlayer;}
 };
 

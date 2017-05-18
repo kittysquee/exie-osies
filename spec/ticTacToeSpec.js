@@ -10,10 +10,6 @@ describe('TicTacToe', function(){
     expect(ticTacToe.positions).toEqual(["", "", "", "", "", "", "", "", ""]);
   });
 
-  // it('only has 9 turns', function(){
-  //
-  // });
-
   it('is initialized with a winning positions array', function(){
     expect(ticTacToe.winningPositions).toEqual([[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]])
   });
@@ -38,9 +34,11 @@ describe('TicTacToe', function(){
     expect(ticTacToe.positions).toEqual(["", "X", "", "", "", "", "", "", ""]);
   });
 
-  // it('doesn\'t allow multiple plays on the same spot', function(){
-  //
-  // });
+  it('doesn\'t allow multiple plays on the same spot', function(){
+    ticTacToe.playTurn(0);
+    ticTacToe.playTurn(0);
+    expect(ticTacToe.positions).not.toEqual(["0", "", "", "", "", "", "", "", ""])
+  });
 
   it('allows multiple plays to occur', function(){
     ticTacToe.playTurn(1);
@@ -68,11 +66,16 @@ describe('TicTacToe', function(){
     expect(ticTacToe.positions).toEqual(["X", "X", "X", "", "", "0", "", "", "0"])
   });
 
-  it('announces game over when no more plays can be made', function(){
-
-  });
-
-  it('announces the winner', function(){
-
+  it('game over when no more plays can be made', function(){
+    ticTacToe.playTurn(1);
+    ticTacToe.playTurn(0);
+    ticTacToe.playTurn(2);
+    ticTacToe.playTurn(5);
+    ticTacToe.playTurn(3);
+    ticTacToe.playTurn(6);
+    ticTacToe.playTurn(4);
+    ticTacToe.playTurn(7);
+    ticTacToe.playTurn(8);
+    expect(ticTacToe.fullBoard()).toBe(true);
   });
 });
