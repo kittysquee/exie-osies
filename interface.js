@@ -9,6 +9,6 @@ var cells = document.getElementsByClassName('cell');
 Array.prototype.forEach.call(cells, function(cell) {
   cell.addEventListener('click', function() {
     boardMarker(this.id);
-    ticTacToe.changePlayer();
+    ticTacToe.playTurn(this.id.split("-")[1]);
   });
 });
