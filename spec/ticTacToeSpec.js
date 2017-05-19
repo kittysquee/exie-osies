@@ -15,36 +15,36 @@ describe('TicTacToe', function(){
   });
 
   it('is initialized with a currentPlayer', function(){
-    expect(ticTacToe.currentPlayer).toEqual("X");
+    expect(ticTacToe.currentPlayer).toEqual("⚔️");
   });
 
   it('will change the current player to 0', function(){
     ticTacToe.changePlayer();
-    expect(ticTacToe.currentPlayer).toEqual("0");
+    expect(ticTacToe.currentPlayer).toEqual("⭕️");
   });
 
-  it('will change the current player back to X', function(){
+  it('will change the current player back to ⚔️', function(){
     ticTacToe.changePlayer();
     ticTacToe.changePlayer();
-    expect(ticTacToe.currentPlayer).toEqual("X");
+    expect(ticTacToe.currentPlayer).toEqual("⚔️");
   });
 
   it('allows a play to occur', function(){
     ticTacToe.playTurn(1);
-    expect(ticTacToe.positions).toEqual(["", "X", "", "", "", "", "", "", ""]);
+    expect(ticTacToe.positions).toEqual(["", "⚔️", "", "", "", "", "", "", ""]);
   });
 
   it('doesn\'t allow multiple plays on the same spot', function(){
     ticTacToe.playTurn(0);
     ticTacToe.playTurn(0);
-    expect(ticTacToe.positions).not.toEqual(["0", "", "", "", "", "", "", "", ""])
+    expect(ticTacToe.positions).not.toEqual(["⭕️", "", "", "", "", "", "", "", ""])
   });
 
   it('allows multiple plays to occur', function(){
     ticTacToe.playTurn(1);
     ticTacToe.playTurn(3);
     ticTacToe.playTurn(5);
-    expect(ticTacToe.positions).toEqual(["", "X", "", "0", "", "X", "", "", ""]);
+    expect(ticTacToe.positions).toEqual(["", "⚔️", "", "⭕️", "", "⚔️", "", "", ""]);
   });
 
   it('checks for the winner', function(){
@@ -53,7 +53,7 @@ describe('TicTacToe', function(){
     ticTacToe.playTurn(1);
     ticTacToe.playTurn(8);
     ticTacToe.playTurn(2);
-    expect(ticTacToe.winner).toEqual("X")
+    expect(ticTacToe.winner).toEqual("⚔️")
   });
 
   it('allows no more plays when someone has won', function(){
@@ -63,7 +63,7 @@ describe('TicTacToe', function(){
     ticTacToe.playTurn(8);
     ticTacToe.playTurn(2);
     ticTacToe.playTurn(6);
-    expect(ticTacToe.positions).toEqual(["X", "X", "X", "", "", "0", "", "", "0"])
+    expect(ticTacToe.positions).toEqual(["⚔️", "⚔️", "⚔️", "", "", "⭕️", "", "", "⭕️"])
   });
 
   it('game over when no more plays can be made', function(){

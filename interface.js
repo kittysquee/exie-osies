@@ -12,9 +12,9 @@ Array.prototype.forEach.call(cells, function(cell) {
     boardMarker(this.id);
     ticTacToe.playTurn(this.id.split("-")[1]);
     if (ticTacToe.winner !== ""){
-      document.getElementById("winner-display").innerText = "The winner is " + ticTacToe.winner + "!";
+      document.getElementById("outcome-display").innerText = "The winner is " + ticTacToe.winner;
     } else if (ticTacToe.fullBoard()) {
-      document.getElementById("winner-display").innerText = "Game over!";
+      document.getElementById("outcome-display").innerText = "Game over!";
     }
   });
 });

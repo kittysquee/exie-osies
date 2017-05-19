@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(224,255,255);
+}
 .tg  {
   border-collapse:collapse;
   border-spacing:0;
@@ -17,4 +20,28 @@
 }
 .tg .tg-yw4l{
   vertical-align:top
+}
+.table-container {
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  text-align: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+}
+h1 {
+  font-size: 60px;
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
 }
